@@ -1,8 +1,10 @@
 package com.tcc.api.config;
 
 
+import com.tcc.api.model.Especialidade;
 import com.tcc.api.model.Faculdade;
 import com.tcc.api.model.Usuario;
+import com.tcc.api.repositories.EspecialidadeRepository;
 import com.tcc.api.repositories.FaculdadeRepository;
 import com.tcc.api.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class TestConfig  implements CommandLineRunner {
     @Autowired
     private FaculdadeRepository faculdadeRepository;
 
+    @Autowired
+    private EspecialidadeRepository especialidadeRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -35,11 +40,19 @@ public class TestConfig  implements CommandLineRunner {
         Faculdade f3  = new Faculdade(null,"UNIP - MARQUÊS ","AV. MARQUES DE SÃO VICENTE","3001","casa","05036-040","ÁGUA BRANCA","SP","SÃO PAULO", "Zona Oeste", "999999999");
         Faculdade f4  = new Faculdade(null,"UNIP - NORTE ","R. AMAZONAS DA SILVA","737","casa","02051-001","VILA GUILHERME","SP","SÃO PAULO", "Zona Norte", "999999999");
 
+
+        Especialidade e1 = new Especialidade(null, "Nutrição", "1");
+        Especialidade e2 = new Especialidade(null, "Fisioterapia", "2");
+        Especialidade e3 = new Especialidade(null, "Educação Fisica", "3");
+        Especialidade e4 = new Especialidade(null, "Psicologia", "4");
+
+
+
         usuarioRepository.saveAll(Arrays.asList(u1,u2));
 
         faculdadeRepository.saveAll(Arrays.asList(f1,f2,f3,f4));
 
-
+        especialidadeRepository.saveAll(Arrays.asList(e1,e2,e3,e4));
 
     }
 

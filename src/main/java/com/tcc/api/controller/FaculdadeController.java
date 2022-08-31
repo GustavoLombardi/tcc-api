@@ -25,8 +25,8 @@ public class FaculdadeController {
     public ResponseEntity<Response<List<Faculdade>>>  findAll(){
         Response<List<Faculdade>> response = new Response<>();
         response.setData(service.findAll());
-        response.setStatusCode(HttpStatus.OK.value());
-        response.setTimeStamp(System.currentTimeMillis());
+    //    response.setStatusCode(HttpStatus.OK.value());
+      //  response.setTimeStamp(System.currentTimeMillis());
         return ResponseEntity.ok().body(response);
     }
 

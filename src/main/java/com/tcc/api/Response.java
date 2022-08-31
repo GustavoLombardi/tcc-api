@@ -7,11 +7,11 @@ import org.springframework.hateoas.RepresentationModel;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Response<T> extends RepresentationModel<Response<T>> {
-    private Integer statusCode;
+ //   private Integer statusCode;
     private T data;
-    private Long timeStamp;
+   // private Long timeStamp;
 
-    public Response() {
-        this.timeStamp = System.currentTimeMillis();
-    }
+   // public Response() {
+    //    this.timeStamp = System.currentTimeMillis();
+  //  }
 }
