@@ -4,11 +4,11 @@ package com.tcc.api.model;
 import lombok.*;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -16,6 +16,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 
 @Entity
+@Table(name = "tb_usuario")
+
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -27,6 +29,16 @@ public class Usuario implements Serializable {
     private String phone;
     private String password;
 
+    @OneToMany(mappedBy = "client")
+
+    private List<Agendamento> agendamento = new ArrayList<>();
 
 
+    public Usuario(Long id, String name, String email, String phone, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
 }
